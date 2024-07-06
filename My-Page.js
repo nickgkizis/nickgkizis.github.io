@@ -2,10 +2,10 @@ document.addEventListener('scroll', function() {
     const titles = document.querySelectorAll('.title');
     const scrollPosition = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const fadeStart = maxScroll / 3;
+    const fadeStart = maxScroll / 4;
 
     titles.forEach(title => {
-        const scrollEffect = scrollPosition / 3;
+        const scrollEffect = scrollPosition / 10;
         const opacityEffect = 2 - scrollPosition / (fadeStart * 2);
 
         if (title.classList.contains('t2') || title.classList.contains('t4')) {

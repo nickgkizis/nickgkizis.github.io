@@ -22,7 +22,6 @@ NAVBAR
 */
 .navbar {
     height:15%;
-    background-color: gray;
     margin-bottom: 200px;
     font-size: 2rem;
 }
@@ -30,19 +29,21 @@ NAVBAR
     font-size: 2rem;
 }
 
-.dropdown-menu {
-    background-color: #343a40;
+.collapse {
+    width: 100vh;
+    height: auto;
+    background-color: #212529;
     border: none;
 }
 .navbar-collapse.show .dropdown-menu{
     display: block !important;
 }
 .dropdown-item {
-    color: white;
+    color: white !important;
 }
 
 .dropdown-item:hover {
-    background-color: gray;
+    background-color: gray !important;
 }
 /* 
 HEADER and VISION
