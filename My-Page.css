@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* 
+NAVBAR
+*/
+.navbar {
+    background-color: gray;
+    margin-bottom: 200px;
+}
+.stay-open{
+    display:block !important;
+}
+.dropdown-menu {
+    background-color: #343a40;
+    border: none;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: gray;
+}
+
+/* 
+BODY
+*/
+body {
+    height: 100vh;
+    font-family: 'Poiret One', sans-serif;
+    background-color: #343a40;
+    color: white;
+    padding-top: 60px; /* Compensate for fixed navbar */
+}
+
+
+/* 
+ARROW TO TOP
+*/
+.arrow-box {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.arrow-icon {
+    color: #000000;
+    font-size: 2rem;
+    transition: all 0.5s ease;
+}
+
+.arrow-icon:hover {
+    color: #000000;
+    transform: scale(1.3);
+}
+
+.arrow-icon:active {
+    color: #ffffff;
+    transform: scale(0.5);
+    transition: 0ms;
+}
+
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+/* 
+NUMBERS
+*/
+.margin-top{
+    margin-top: 100px;
+}
+.margin-bot{
+    margin-bottom: 100px;
+}
+.margin-up-down{
+    margin:20px 0px;
+}
+.box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+}
+.numbers {
+    color: #343a40;
+    font-size: 7rem;
+    transition: all 1s ease;
+}
+
+.dot {
+    position: absolute;
+    color: #343a40;
+    font-size: 1rem;
+    top: 83%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    transition:0.5s ease-in;
+}
+.box:hover {
+    background-color: transparent;
+    
+}
+
+.box:hover .numbers {
+    color: #ffffff;
+    /* left: 60px; */
+    
+}
+
+.box:hover .dot {
+
+    color: #ffffff;
+    /* right: -70px; */
+    
+}
+.text{
+    margin-left: 50px;
+    width: 70%;
+    font-size: x-large;
+}
+.box:hover .text{
+
+
+}
+/* 
+
+*/
+hr{
+    width:40%;
+    text-align:left;
+    margin-left:0
+}
+/* 
+FOOTER
+*/
+footer {
+    height: 10vh;
+}
