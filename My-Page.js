@@ -12,7 +12,7 @@ document.addEventListener('scroll', function() {
         const titlePosition = title.getBoundingClientRect().top + scrollPosition;
         const fadeStart = titlePosition - windowHeight / 4;
         const fadeEnd = titlePosition + windowHeight / 4;
-        const scrollEffect = scrollPosition / 10;
+        const scrollEffect = scrollPosition / 8;
 
         if (title.classList.contains('t2') || title.classList.contains('t4')) {
             title.style.transform = `translateX(${scrollEffect}px)`;
@@ -71,7 +71,7 @@ document.addEventListener('scroll', function() {
         icon1.style.opacity = 1;
         icon2.style.opacity = 1;
     } else {
-        title1.style.opacity = 0.3;
+        title1.style.opacity = 0;
         icon1.style.opacity = 0.1;
         icon2.style.opacity = 0.1;
     }
@@ -81,3 +81,23 @@ document.addEventListener('scroll', function() {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Typing effect
+let text1 = "print";
+let text2 = "('hello world')";
+let index = 0;
+const textElement = document.getElementById("title-text");
+
+function type() {
+    if (index < text1.length) {
+        textElement.innerHTML += text1.charAt(index);
+        index++;
+        setTimeout(type, 100); // Speed for text1
+    } else if (index - text1.length < text2.length) {
+        textElement.innerHTML += text2.charAt(index - text1.length);
+        index++;
+        setTimeout(type, 200); // Speed for text2
+    }
+}
+type();
+
