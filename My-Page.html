@@ -17,7 +17,10 @@
 -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light fixed-top">
         <div class="container-fluid ">
-            <h1 class="navbar-brand">Nikolaos <br>&ensp;Gkizis <br>&emsp;Chatziantoniou</h1>
+            <a class="main-title" href="#">
+                <h1 class="navbar-brand">Nikolaos <br>&ensp;Gkizis <br>&emsp;Chatziantoniou
+                </h1>
+            </a>
             <div class="vr"></div>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -27,12 +30,13 @@
 
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown-item">
-                        <a href="#" class="nav-link" role="button"  id="dropdownMenuLink" data-bs-toggle="dropdown">About Me</a>
+                        <a href="#my-vision" class="nav-link" role="button"  >My Vision</a>
                     </li>
                     <div class="vr"></div>
                     <li class="nav-item dropdown-item">
-                        <a href="#my-vision" class="nav-link" role="button"  >My Vision</a>
+                        <a href="#my-story" class="nav-link" role="button"  >My Story</a>
                     </li>
+                    
                 </ul>
 
                 <ul class="navbar-nav ms-auto">
@@ -55,14 +59,16 @@ HEADER-TYPING EFFECT
     <div class="hr1">A Coding Journey:</div>
     <div class="hr2">" It all started with a single line of code . . . "</div>
     <hr><hr>
-    <div class="typing-container">
-        <div class="title-text type-box" id="title-text">
-            <span id="typing-text"></span>
-        </div>
-    </div>
+    
     
     <div class="title-text">
-        "Every journey has a starting point", and mine began with a single line of code. <br><br> It was the spark that ignited my passion for crafting digital experiences, exploring new ideas, and turning creative concepts into reality! <br><br>
+        "Every journey has a starting point", and mine began with a single line of code. To be precice it was this one:<br><br>
+        <div class="typing-container">
+            <div class="title-text type-box" id="title-text">
+                <span id="typing-text"></span>
+            </div>
+        </div>
+        <br>It was the spark that ignited my passion for crafting digital experiences, exploring new ideas, and turning creative concepts into reality! <br><br>
         Find out more about me and my passion in coding bellow ...
     </div>
     <div class="arrow-container">
@@ -111,24 +117,24 @@ MY VISION
     </div>
 
 </div>
-    
+
+<!-- 
+MY STORY
+-->
+<div class="botom-container"  id="my-story">
+    <h1 class="botom-title">My Story</h1>
+    <hr><hr>
+    <div class="title-text">
+        <p>As a passionate coder from Greece, my journey has been a blend of diverse interests and a keen focus on technology.<br><br> Having studied linguistics and digital humanities, I have recently fully transitioned into the world of web development, where I thrive on creating dynamic and engaging digital experiences.<br><br> Here, you'll find a showcase of my projects, reflecting my dedication to mastering coding languages and web technologies.<br><br> Explore my site to learn more about my work, my journey, and the various interests that drive my creativity and innovation in the tech world.</p>
+    </div>
+</div>
+
+   
 <!-- 
 GET TO KNOW ME LINKS
 -->
-<!-- <div id="get-to-know-me" class="link-main" >
-    <h1>Get To Know Me</h1>
-    <hr><hr>
-    <div class="link-container d-flex ">
-        <div class="item">
-            <span class="box"><i class="fa-brands fa-github link-icon link-icon-s"></i></span>
-        </div>
-        <div class="vr"></div>
-        <div class="item">
-            <span class="box"><i class="fa-brands fa-linkedin-in link-icon link-icon-s"></i></span>
-        </div>  
-    </div>
-</div> -->
-<div id="get-to-know-me" class="link-main">
+<div id="get-to-know-me"></div>
+<div class="link-main">
     <h1 id="title1">Get To Know Me</h1>
     <hr><hr>
     <div class="link-container d-flex">
@@ -140,16 +146,13 @@ GET TO KNOW ME LINKS
             <span class="box"><i class="fa-brands fa-linkedin-in link-icon link-icon-s" id="icon2"></i></span>
         </div>
     </div>
-</div>
-
-
-    
+</div> 
           
 <!-- 
 ARROW SCROLL TO TOP
 -->
     <div class="to-top" onclick="scrollToTop()">
-        <span>Back to top</span>
+        <span>Back to Top</span>
         <div class="arrow-box">
             <span><i class="fas fa-arrow-up arrow-icon"></i></span>
         </div>

@@ -16,8 +16,15 @@ hr {
     text-align: left;
     margin-left: 0;
 }
+/* counter margin */
+.counter-margin{
+    margin-top: 200px;
+}
 
 /* Navbar */
+.main-title{
+    text-decoration: none;
+}
 .navbar {
     margin-bottom: 200px;
     font-size: 2rem;
@@ -39,12 +46,14 @@ hr {
 }
 
 .dropdown-item {
-    color: white !important;
+    background-color: transparent;
+    transition: all 1.5s ease-in-out;
 }
 
 .dropdown-item:hover {
     background-color: #343a40 !important;
 }
+
 
 /* Header and Vision */
 header {
@@ -55,7 +64,6 @@ header {
 }
 
 .title-text {
-    padding: 10px;
     width: 65%;
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
@@ -74,6 +82,7 @@ header {
     font-size: 4rem;
     margin: 20px;
 }
+
 /* 
 BOUNCING ARROW
 */
@@ -85,11 +94,11 @@ BOUNCING ARROW
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 50px; /* Adjust as needed */
 }
 
 .arr {
-    font-size: 4rem; /* Adjust as needed */
+    font-size: 6rem; /* Adjust as needed */
     animation: bounce 3s infinite;
 }
 
@@ -98,29 +107,26 @@ BOUNCING ARROW
         transform: translateY(0);
     }
     40% {
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
     60% {
-        transform: translateY(-5px);
+        transform: translateY(-7px);
     }
 }
-
 
 /* 
 TYPING EFFECT
 */
 .type-box{
-    margin-bottom:5%;
-    border: 3px solid black;
     background-color:#212529;
-    color: rgb(110, 153, 45);
+    color:rgb(22, 205, 9);
     width: fit-content;
 }
 .typing-effect {
     font-family: 'Courier New', Courier, monospace;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.15em solid rgb(254, 254, 254);
+    border-right: 0.15em solid rgb(230, 223, 223);
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
@@ -131,7 +137,7 @@ TYPING EFFECT
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: rgb(255, 255, 255); }
+    50% { border-color: rgb(154, 25, 25); }
 }
 
 
@@ -231,6 +237,11 @@ body {
     border-radius: 50%;
     transition: all 0.3s ease;
     opacity: 0.2;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrow-box:hover {
@@ -262,12 +273,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+}
+/* 
+MY STORY
+*/
+.botom-container{
+    margin-top: 150px;
+    padding: 20px;
+}
+.botom-title{
+    font-size: 4rem;
 }
 
 /* Get to Know Me Links */
 .link-main {
-    margin-top: 300px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
