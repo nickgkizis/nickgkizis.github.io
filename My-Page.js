@@ -1,14 +1,19 @@
 document.addEventListener('scroll', function() {
     const titles = document.querySelectorAll('.title');
+    const boxes = document.querySelectorAll('.box');
+    const title1 = document.getElementById('title1');
+    const icon1 = document.getElementById('icon1');
+    const icon2 = document.getElementById('icon2');
+    const getToKnowMeContainer = document.getElementById('get-to-know-me');
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
-    
+
     titles.forEach(title => {
         const titlePosition = title.getBoundingClientRect().top + scrollPosition;
         const fadeStart = titlePosition - windowHeight / 4;
         const fadeEnd = titlePosition + windowHeight / 4;
         const scrollEffect = scrollPosition / 10;
-        
+
         if (title.classList.contains('t2') || title.classList.contains('t4')) {
             title.style.transform = `translateX(${scrollEffect}px)`;
         } else if (title.classList.contains('t1') || title.classList.contains('t3')) {
@@ -23,17 +28,13 @@ document.addEventListener('scroll', function() {
         } else {
             opacityEffect = 0.5 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
         }
-        
+
         title.style.opacity = opacityEffect;
     });
-});
-document.addEventListener('scroll', function() {
-    const boxes = document.querySelectorAll('.box');
-    const scrollPosition = window.scrollY;
-    const triggerPoint = window.innerHeight / 2; // Adjust this value as needed
 
     boxes.forEach(box => {
         const boxTop = box.getBoundingClientRect().top + scrollPosition;
+        const triggerPoint = windowHeight / 2;
 
         if (scrollPosition > boxTop - triggerPoint) {
             box.style.backgroundColor = 'transparent';
@@ -42,30 +43,38 @@ document.addEventListener('scroll', function() {
 
             if (linkIcon) {
                 linkIcon.style.color = '#ffffff';
-                // linkIcon.style.left = '60px'; // Uncomment and adjust if needed
             }
 
             if (dot) {
                 dot.style.color = '#ffffff';
-                // dot.style.right = '-70px'; // Uncomment and adjust if needed
             }
         } else {
-            // Reset to initial styles if needed
-            box.style.backgroundColor = ''; // Reset to initial background color
+            box.style.backgroundColor = '';
             const linkIcon = box.querySelector('.link-icon');
             const dot = box.querySelector('.dot');
 
             if (linkIcon) {
-                linkIcon.style.color = ''; // Reset to initial color
-                // linkIcon.style.left = ''; // Reset to initial position if needed
+                linkIcon.style.color = '';
             }
 
             if (dot) {
-                dot.style.color = ''; // Reset to initial color
-                // dot.style.right = ''; // Reset to initial position if needed
+                dot.style.color = '';
             }
         }
     });
+
+    const containerTop = getToKnowMeContainer.getBoundingClientRect().top + scrollPosition;
+    const triggerPoint = windowHeight / 1.5;
+
+    if (scrollPosition > containerTop - triggerPoint) {
+        title1.style.opacity = 1;
+        icon1.style.opacity = 1;
+        icon2.style.opacity = 1;
+    } else {
+        title1.style.opacity = 0.3;
+        icon1.style.opacity = 0.1;
+        icon2.style.opacity = 0.1;
+    }
 });
 
 // JavaScript function to scroll to top smoothly
