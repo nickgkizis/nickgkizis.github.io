@@ -1,3 +1,4 @@
+// const baseFontSize = 50;
 document.addEventListener('scroll', function() {
     const titles = document.querySelectorAll('.title');
     const boxes = document.querySelectorAll('.box');
@@ -6,45 +7,48 @@ document.addEventListener('scroll', function() {
     const icon2 = document.getElementById('icon2');
     const getToKnowMeContainer = document.getElementById('get-to-know-me');
     const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
+    const maxTranslateValue = windowWidth / 20; // Adjust this value as needed
 
     titles.forEach(title => {
         const titlePosition = title.getBoundingClientRect().top + scrollPosition;
-        const fadeStart = titlePosition - windowHeight / 4;
-        const fadeEnd = titlePosition + windowHeight / 4;
-        let scrollEffect = scrollPosition / 6;
+        const titleCenter = windowWidth / 2; // Center of the screen
 
-        // Limit scrollEffect to prevent titles from going out of view
-        if (windowWidth > 992) { // Adjust this value based on your design and media queries
-            if (title.classList.contains('t2') || title.classList.contains('t4')) {
-                scrollEffect = Math.min(scrollEffect, windowWidth / 2);
-            } else if (title.classList.contains('t1') || title.classList.contains('t3')) {
-                scrollEffect = Math.min(scrollEffect, windowWidth / 2);
-            }
-        }
+        // Calculate scroll effect based on distance from the center of the screen
+        let scrollEffect = ((titlePosition - titleCenter) / windowWidth) * maxTranslateValue;
 
-        if (title.classList.contains('t2') || title.classList.contains('t4')) {
-            title.style.transform = `translateX(${scrollEffect}px)`;
-        } else if (title.classList.contains('t1') || title.classList.contains('t3')) {
-            title.style.transform = `translateX(-${scrollEffect}px)`;
-        }
+        // Clamp the scrollEffect to not exceed maxTranslateValue
+        scrollEffect = Math.max(-maxTranslateValue, Math.min(maxTranslateValue, scrollEffect));
 
+        // Ensure the title stays within its container
+        const titleContainer = title.closest('.title-container');
+        const containerRect = titleContainer.getBoundingClientRect();
+        const titleRect = title.getBoundingClientRect();
+
+
+        // Adjust opacity based on scroll position
         let opacityEffect;
-        if (scrollPosition <= fadeStart) {
+        if (scrollPosition <= titlePosition - window.innerHeight / 4) {
             opacityEffect = 1;
-        } else if (scrollPosition >= fadeEnd) {
+        } else if (scrollPosition >= titlePosition + window.innerHeight / 4) {
             opacityEffect = 0;
         } else {
-            opacityEffect = 0.5 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+            opacityEffect = 0.5 - (scrollPosition - (titlePosition - window.innerHeight / 4)) / (window.innerHeight / 2);
         }
 
+        // Adjust font size based on opacity
+        const maxFontSize = 60;
+        const minFontSize = 20;
+        const fontSize = minFontSize + (maxFontSize - minFontSize) * opacityEffect;
+        title.style.fontSize = `${fontSize}px`;
+
+        // Apply opacity and font size changes
         title.style.opacity = opacityEffect;
     });
 
     boxes.forEach(box => {
         const boxTop = box.getBoundingClientRect().top + scrollPosition;
-        const triggerPoint = windowHeight / 2;
+        const triggerPoint = window.innerHeight / 2;
 
         if (scrollPosition > boxTop - triggerPoint) {
             box.style.backgroundColor = 'transparent';
@@ -74,7 +78,7 @@ document.addEventListener('scroll', function() {
     });
 
     const containerTop = getToKnowMeContainer.getBoundingClientRect().top + scrollPosition;
-    const triggerPoint = windowHeight / 1.5;
+    const triggerPoint = window.innerHeight / 1.5;
 
     if (scrollPosition > containerTop - triggerPoint) {
         title1.style.opacity = 1;
@@ -113,7 +117,6 @@ function scrollToTop() {
     });
 }
 
-
 // Typing effect
 let text1 = "print";
 let text2 = "('hello ";
@@ -129,7 +132,7 @@ function type() {
     } else if (index - text1.length < text2.length) {
         textElement.innerHTML += text2.charAt(index - text1.length);
         index++;
-        setTimeout(type, 200); // Speed for text2
+        setTimeout(type, 400); // Speed for text2
     } else if (index - (text1.length + text2.length) < text3.length) {
         textElement.innerHTML += text3.charAt(index - (text1.length + text2.length));
         index++;
@@ -150,7 +153,6 @@ function type() {
 
 type();
 
-
 // Close navbar collapse on link click
 const navLinks = document.querySelectorAll('.nav-link');
 const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -162,4 +164,3 @@ navLinks.forEach(link => {
         }
     });
 });
-
