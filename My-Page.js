@@ -7,12 +7,22 @@ document.addEventListener('scroll', function() {
     const getToKnowMeContainer = document.getElementById('get-to-know-me');
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
 
     titles.forEach(title => {
         const titlePosition = title.getBoundingClientRect().top + scrollPosition;
         const fadeStart = titlePosition - windowHeight / 4;
         const fadeEnd = titlePosition + windowHeight / 4;
-        const scrollEffect = scrollPosition / 8;
+        let scrollEffect = scrollPosition / 6;
+
+        // Limit scrollEffect to prevent titles from going out of view
+        if (windowWidth > 992) { // Adjust this value based on your design and media queries
+            if (title.classList.contains('t2') || title.classList.contains('t4')) {
+                scrollEffect = Math.min(scrollEffect, windowWidth / 2);
+            } else if (title.classList.contains('t1') || title.classList.contains('t3')) {
+                scrollEffect = Math.min(scrollEffect, windowWidth / 2);
+            }
+        }
 
         if (title.classList.contains('t2') || title.classList.contains('t4')) {
             title.style.transform = `translateX(${scrollEffect}px)`;
@@ -77,14 +87,37 @@ document.addEventListener('scroll', function() {
     }
 });
 
-// JavaScript function to scroll to top smoothly
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// Select the Back to Top button
+const backToTopButton = document.getElementById('backToTopButton');
+
+// Function to check scroll position and toggle button visibility
+function toggleBackToTopButton() {
+    const navigationBar = document.getElementById('grad'); // Replace 'grad' with your navigation bar ID
+    if (window.scrollY > navigationBar.offsetTop + navigationBar.offsetHeight) {
+        backToTopButton.style.display = 'flex';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
 }
+
+// Listen for scroll events
+document.addEventListener('scroll', function() {
+    toggleBackToTopButton();
+});
+
+// Smooth scroll to top functionality
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 
 // Typing effect
 let text1 = "print";
-let text2 = "('hello world')";
+let text2 = "('hello ";
+let text3 = "world')";
 let index = 0;
 const textElement = document.getElementById("title-text");
 
@@ -97,7 +130,36 @@ function type() {
         textElement.innerHTML += text2.charAt(index - text1.length);
         index++;
         setTimeout(type, 200); // Speed for text2
+    } else if (index - (text1.length + text2.length) < text3.length) {
+        textElement.innerHTML += text3.charAt(index - (text1.length + text2.length));
+        index++;
+        setTimeout(type, 200); // Speed for text3
+    }
+
+    // Start blinking cursor after all text is typed
+    if (index >= text1.length + text2.length + text3.length) {
+        setInterval(function() {
+            if (textElement.innerHTML.endsWith("_")) {
+                textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+            } else {
+                textElement.innerHTML += "_";
+            }
+        }, 2000); // Adjust blinking speed as needed
     }
 }
+
 type();
+
+
+// Close navbar collapse on link click
+const navLinks = document.querySelectorAll('.nav-link');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        }
+    });
+});
 
