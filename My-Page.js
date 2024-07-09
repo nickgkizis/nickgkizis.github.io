@@ -1,10 +1,13 @@
-// const baseFontSize = 50;
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 document.addEventListener('scroll', function() {
     const titles = document.querySelectorAll('.title');
     const boxes = document.querySelectorAll('.box');
     const title1 = document.getElementById('title1');
     const icon1 = document.getElementById('icon1');
     const icon2 = document.getElementById('icon2');
+    const icon3 = document.getElementById('icon3');
     const getToKnowMeContainer = document.getElementById('get-to-know-me');
     const scrollPosition = window.scrollY;
     const windowWidth = window.innerWidth;
@@ -84,10 +87,13 @@ document.addEventListener('scroll', function() {
         title1.style.opacity = 1;
         icon1.style.opacity = 1;
         icon2.style.opacity = 1;
+        icon3.style.opacity = 1;
+
     } else {
         title1.style.opacity = 0;
-        icon1.style.opacity = 0.1;
-        icon2.style.opacity = 0.1;
+        icon1.style.opacity = 0;
+        icon2.style.opacity = 0;
+        icon3.style.opacity = 0;
     }
 });
 
@@ -164,3 +170,4 @@ navLinks.forEach(link => {
         }
     });
 });
+
