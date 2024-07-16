@@ -185,43 +185,47 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleDotOpacity();
     });
 
-    // Typing effect
-    let text1 = "print";
-    let text2 = "('hello ";
-    let text3 = "world')";
-    let index = 0;
-    const textElement = document.getElementById("title-text");
-    let typingInterval; // Variable to hold the typing interval
+let text1 = "print";
+let text2 = "(";
+let text3 = "'hello world'";
+let text4 = ")";
+let index = 0;
+const textElement = document.getElementById("title-text");
+let typingInterval; // Variable to hold the typing interval
 
-    function type() {
-        if (index < text1.length) {
-            textElement.innerHTML += text1.charAt(index);
-            index++;
-            typingInterval = setTimeout(type, 100); // Speed for text1
-        } else if (index - text1.length < text2.length) {
-            textElement.innerHTML += text2.charAt(index - text1.length);
-            index++;
-            typingInterval = setTimeout(type, 400); // Speed for text2
-        } else if (index - (text1.length + text2.length) < text3.length) {
-            textElement.innerHTML += text3.charAt(index - (text1.length + text2.length));
-            index++;
-            typingInterval = setTimeout(type, 200); // Speed for text3
-        }
-
-        // Start blinking cursor after all text is typed
-        if (index >= text1.length + text2.length + text3.length) {
-            setInterval(function() {
-                if (textElement.innerHTML.endsWith("_")) {
-                    textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-                } else {
-                    textElement.innerHTML += "_";
-                }
-            }, 2000); // Adjust blinking speed as needed
-        }
+function type() {
+    if (index < text1.length) {
+        textElement.innerHTML += `<span style="color: moccasin">${text1.charAt(index)}</span>`;
+        index++;
+        typingInterval = setTimeout(type, 100); // Speed for text1
+    } else if (index - text1.length < text2.length) {
+        textElement.innerHTML += `<span style="color: yellow">${text2.charAt(index - text1.length)}</span>`;
+        index++;
+        typingInterval = setTimeout(type, 400); // Speed for text2
+    } else if (index - (text1.length + text2.length) < text3.length) {
+        textElement.innerHTML += `<span style="color: orange">${text3.charAt(index - (text1.length + text2.length))}</span>`;
+        index++;
+        typingInterval = setTimeout(type, 200); // Speed for text3
+    } else if (index - (text1.length + text2.length + text3.length) < text4.length) {
+        textElement.innerHTML += `<span style="color: yellow">${text4.charAt(index - (text1.length + text2.length + text3.length))}</span>`;
+        index++;
+        typingInterval = setTimeout(type, 300); // Speed for text4
     }
 
-    // Start typing effect initially
-    type();
+    // Start blinking cursor after all text is typed
+    if (index >= text1.length + text2.length + text3.length + text4.length) {
+        setInterval(function() {
+            if (textElement.innerHTML.endsWith("_")) {
+                textElement.innerHTML = textElement.innerHTML.slice(0, -1);
+            } else {
+                textElement.innerHTML += "_";
+            }
+        }, 1000); // Adjust blinking speed as needed
+    }
+}
+
+// Start typing effect initially
+type();
 
     // Close navbar collapse on link click
     const navLinks = document.querySelectorAll('.nav-link');
