@@ -95,6 +95,7 @@ header {
     padding: 60px; 
     border-radius: 10px;
     transition: all 1s ease-in-out;
+    background: linear-gradient(to bottom, #d53ac5 0%, #0c2aec 100%);
     /* background: linear-gradient(to bottom, #d53ac5 0%, #0c2aec 100%); */
     /* background: linear-gradient(to right bottom, #d53ac5 0%, #0c2aec 100%); */
 }
