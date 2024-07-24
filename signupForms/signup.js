@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var hidden = document.getElementById('hide');
 
     box1.addEventListener('mouseover', function() {
-        hidden.innerHTML = 'Do you want to join us?';
+        hidden.innerHTML = 'Want to join us?';
         hidden.style.opacity=1;
     });
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     box2.addEventListener('mouseover', function() {
-        hidden.innerHTML = 'Do you have an account already?';
+        hidden.innerHTML = 'Already have an account?';
         hidden.style.opacity=1;
     });
 
