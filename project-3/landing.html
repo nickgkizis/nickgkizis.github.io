@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./signup.css">
+    <link rel="stylesheet" href="./landing.css">
 </head>
 <body>
     <header>
@@ -19,11 +19,11 @@
     </header>
     <div class="img-bg">
 
-        <p id="hide"></p>
+        <p id="hide">Welcome to my Website!</p>
         <div class="outer">
             
-            <div class="container">
-                <div class="box-wrapper">
+            <div class="container" id="contn">
+                <div class="box-wrapper" >
                     <div class="box b1 sign-up-box">
                         <div class="box-content">
                             <div class="form-box sign-up-box">
@@ -32,17 +32,17 @@
                                     <div class="form-group">
                                         <label for="sign-up-name">Username</label>
                                         <br>
-                                        <input type="text" id="sign-up-name" name="name" required>
+                                        <input type="" id="sign-up-name" name="name" placeholder="insert your username" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="sign-up-email">Email</label>
                                         <br>
-                                        <input type="email" id="sign-up-email" name="email" required>
+                                        <input type="" id="sign-up-email" name="email" placeholder="insert your email" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="sign-up-password">Password</label>
                                         <br>
-                                        <input type="password" id="sign-up-password" name="password" required>
+                                        <input type="" id="sign-up-password" name="password" placeholder="insert a password" required>
                                     </div>
                                     <button type="submit">Sign Up</button>
                                 </form>
@@ -58,12 +58,12 @@
                                     <div class="form-group">
                                         <label for="sign-in-email">Email</label>
                                         <br>
-                                        <input type="email" id="sign-in-email" name="email" required>
+                                        <input type="" id="sign-in-email" name="email" placeholder="insert your email">
                                     </div>
                                     <div class="form-group">
                                         <label for="sign-in-password">Password</label>
                                         <br>
-                                        <input type="password" id="sign-in-password" name="password" required>
+                                        <input type="" id="sign-in-password" name="password" placeholder="insert a password" required>
                                     </div>
                                     <button type="submit">Log In</button>
                                 </form>
@@ -81,6 +81,6 @@
         </div>
     </footer>
 
-    <script src="./signup.js"></script>
+    <script src="./landing.js"></script>
 </body>
 </html>
