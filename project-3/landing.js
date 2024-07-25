@@ -6,27 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     box1.addEventListener('mouseover', function() {
         hidden.innerHTML = 'Want to join us?';
-        // hidden.style.opacity=1;
+        hidden.style.opacity=1;
         cont.style.background =' linear-gradient(to left bottom, #d53ac5 0%, #0c2aec 100%)';
     });
 
     box1.addEventListener('mouseout', function() {
-        hidden.innerHTML = 'Welcome to my Website !';
-        // hidden.style.opacity=0;
+        // hidden.innerHTML = '';
+        hidden.style.opacity=0;
         cont.style.background = 'linear-gradient(to bottom, #d53ac5 0%, #0c2aec 100%)';
         
     });
 
     box2.addEventListener('mouseover', function() {
         hidden.innerHTML = 'Already have an account?';
-        // hidden.style.opacity=1;
+        hidden.style.opacity=1;
         cont.style.background =' linear-gradient(to right bottom, #d53ac5 0%, #0c2aec 100%)';
 
     });
 
     box2.addEventListener('mouseout', function() {
-        hidden.innerHTML = 'Welcome to my Website !';
-        // hidden.style.opacity=0;
+        // hidden.innerHTML = '';
+        hidden.style.opacity=0;
         cont.style.background = 'linear-gradient(to bottom, #d53ac5 0%, #0c2aec 100%)';
     });
 });
