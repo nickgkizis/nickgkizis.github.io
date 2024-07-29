@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let box2 = document.querySelector('.b1');
     let hidden = document.getElementById('hide');
     let cont = document.getElementById('contn');
+    let img = document.getElementById('img-bg')
 
     box1.addEventListener('mouseover', function() {
         hidden.innerHTML = 'Want to join us?';
@@ -11,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     box1.addEventListener('mouseout', function() {
-        // hidden.innerHTML = '';
-        hidden.style.opacity=0;
+        hidden.innerHTML = 'Welcome to my Website!';
+        // hidden.style.opacity=1;
+        // hidden.style.color = 'grey';
         cont.style.background = 'linear-gradient(to bottom, #d53ac5 0%, #0c2aec 100%)';
         
     });
@@ -25,8 +27,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     box2.addEventListener('mouseout', function() {
-        // hidden.innerHTML = '';
-        hidden.style.opacity=0;
+        hidden.innerHTML = 'Welcome to my Website!';
+        // hidden.style.opacity=1;
+        // hidden.style.color = 'grey';
         cont.style.background = 'linear-gradient(to bottom, #d53ac5 0%, #0c2aec 100%)';
     });
+    
+    
+    function setBackgroundOpacity(opacity) {
+        img.style.setProperty('--bg-opacity', opacity)
+    };
+
+    // Change opacity on mouseover
+    cont.addEventListener('mouseover', function() {
+        setBackgroundOpacity(0.8);
+    });
+
+    // Reset opacity on mouseout
+    cont.addEventListener('mouseout', function() {
+        setBackgroundOpacity(1);
+    });
 });
+    

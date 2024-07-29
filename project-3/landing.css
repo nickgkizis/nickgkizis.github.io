@@ -54,7 +54,7 @@ header {
 /* 
 main
 */
-.img-bg {
+/* .img-bg {
     background-image: url('./abstract.jpg');
     background-size: cover;
     height: 100vh;
@@ -63,24 +63,64 @@ main
     justify-content: center;
     align-items: center;
     position: relative;
+} */
+/* .left-ar{
+    opacity: 0;
+}
+.right-ar{
+    opacity: 0;
+} */
+.img-bg {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    --bg-opacity: 1;
 }
 
+.img-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./abstract.jpg'); 
+    background-size: cover;
+    background-position: center;
+    opacity: var(--bg-opacity);
+    z-index: -1;
+    transition: all 1s ease-in-out;
+}
+
+.hide-bg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1919;
+}
+.hide-bg i{
+    font-size: 8rem;
+}
 #hide{
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: grey;
     font-size: 6rem;
-    transition: all 3s ease-in-out;
+    font-weight: bold;
+    transition: all 2s ease-in-out;
     top: 6%;
     /* opacity: 0; */
+    padding:10px;
+    /* background-color: #1b1919; */
 }
 
 .outer {
     display: flex;
-    align-items: center;
+    align-items:flex-start;
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -88,6 +128,7 @@ main
 }
 
 .container {
+    margin-top: 5%;
     display: flex;
     width: 80%; 
     max-width: 1000px;
@@ -219,7 +260,7 @@ button {
     font-size: 2rem;
     color: rgb(255, 255, 255);
     background: linear-gradient(to top, #0c2aec 0%, #d53ac5 100%);
-    opacity: 50%;
+    opacity: 70%;
 }
 
 button:hover {
