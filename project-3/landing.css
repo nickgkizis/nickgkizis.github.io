@@ -3,7 +3,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     font-family: 'Poiret One', sans-serif;
 }
 
@@ -28,12 +28,13 @@ header {
 .navbar-brand {
     font-size: 2rem;
     font-weight: bold;
+    margin: 100px;
 }
 
 .navbar-menu {
     list-style: none;
     display: flex;
-    margin: 0;
+    margin: 100px;
     padding: 0;
 }
 
@@ -44,7 +45,7 @@ header {
 .navbar-menu a {
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 
@@ -99,9 +100,7 @@ main
     justify-content: center;
     background-color: #1b1919;
 }
-.hide-bg i{
-    font-size: 8rem;
-}
+
 #hide{
     width: 100%;
     margin: 0;
@@ -109,7 +108,7 @@ main
     justify-content: center;
     align-items: center;
     color: grey;
-    font-size: 6rem;
+    font-size: 2rem;
     font-weight: bold;
     transition: all 2s ease-in-out;
     top: 6%;
@@ -130,11 +129,11 @@ main
 .container {
     margin-top: 5%;
     display: flex;
-    width: 80%; 
-    max-width: 1000px;
-    height: 400px;
+    width: 50%; 
+    max-width:800px;
+    height: 300px;
     position: relative;
-    padding: 60px; 
+    padding: 30px; 
     border-radius: 10px;
     transition: all 1s ease-in-out;
     background: linear-gradient(to bottom, #d53ac5 0%, #0c2aec 100%);
@@ -155,7 +154,7 @@ main
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 50%;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     position: relative;
     overflow: hidden;
     transition: all 1s ease-in-out;
@@ -220,7 +219,7 @@ main
     position: absolute;
     width: 100%;
     height: 100%;
-    font-size: 5rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,9 +254,10 @@ main
 
 button {
     background: none;
-    margin-top: 15px;
+    margin-top: 10px;
     border-radius: 5%;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
     color: rgb(255, 255, 255);
     background: linear-gradient(to top, #0c2aec 0%, #d53ac5 100%);
     opacity: 70%;
@@ -305,7 +305,7 @@ responsive
 */
 @media (max-width: 1023px) {
     .navbar-brand {
-        font-size: 1.5rem; 
+        font-size: 1.2rem; 
     }
     
     .navbar-menu a {
@@ -313,17 +313,17 @@ responsive
     }
     
     #hide {
-        font-size: 3rem; 
+        font-size: 1.2rem; 
         opacity: 0; 
     }
     
     .box {
         flex-direction: column; 
-        font-size: 3rem; 
+        font-size: 1.2rem; 
     }
     
     .box-content {
-        font-size: 1.5rem; 
+        font-size: 1.2rem; 
     }
     input, button {
         transform: scale(0.7);
@@ -332,7 +332,7 @@ responsive
 
 @media (max-width: 723px) {
     .navbar-brand {
-        font-size: 1.2rem; 
+        font-size: 1rem; 
     }
     
     .navbar-menu a {
@@ -340,11 +340,11 @@ responsive
     }
     
     #hide {
-        font-size: 2rem; 
+        font-size: 1rem; 
     }
     
     .box-overlay {
-        font-size: 2rem;
+        font-size: 1rem;
     }
     
     .box-content {
