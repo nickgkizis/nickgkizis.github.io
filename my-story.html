@@ -25,6 +25,7 @@
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
 
             <div class="navbar-collapse collapse" id="navbarCollapse">
 
@@ -43,6 +44,7 @@
                     
                 </ul>
 
+                
                 <ul class="navbar-nav ms-auto">
                     <div class="vr"></div>
                     <li class="nav-item dropdown-item">
@@ -65,9 +67,77 @@
     </div>
     <div class="bottom-container">
         <div class="title-text-2">
-            <p>I am a programmer from Greece, <br> but that is only a part of my journey. <br><br> Growing up I had a diverse set of interests, <br>which probably had an impact on my story. <br><br> I studied Philology and Linguistics at <br> Aristotle University, in my hometown, Thessaloniki. <br> After I graduated I felt something was missing, <br>I wanted to transition towards something more technical. <br><br> My curiosity led me to move to Sweden <br> to get my Master's degree in Digital Humanities,<br>a field that explores the digitalization of cultural heritage.<br><br> Moving abbroad was a challenge on its own, <br> let alone studying and working in a foreign country. <br>But it no mater the challenge, <br> I felt that I was making my dreams come to life.<br><br> After I graduated I felt confident that I knew exactly <br> what I wanted to do, that being becoming a web developer! </p>
+            <p>
+                I am a programmer from Greece, <br> 
+                but that is only a part of my journey. <br><br> 
+                Growing up I had a diverse set of interests, <br>
+                which probably had an impact on my story. <br><br> 
+                I studied Philology and Linguistics at <br> 
+                Aristotle University, in my hometown, Thessaloniki. <br> 
+                After I graduated I felt something was missing, <br>
+                I wanted to transition towards something more technical. <br><br> 
+                My curiosity led me to move to Sweden <br> where I studied at Uppsala University, <br> 
+                and earn my Master's degree in Digital Humanities,<br>
+                a field that explores the digitalization of cultural heritage.<br><br> 
+                Moving abroad was a challenge on its own, <br> 
+                let alone studying and working in a foreign country. <br>
+                But no matter the challenge, <br> 
+                I felt that I was making my dreams come to life.<br><br> 
+                After my graduation I felt confident that I knew exactly <br> 
+                what I wanted to do, that being becoming a web developer! <br>
+                To achieve my goal I started a course about Full-Stack Development <br>at Athens University of Economics and Business.
+            </p>
+        </div>
+    
+        <!-- Plane Animation Container -->
+        <div class="plane-animation-container">
+            <!-- Abstract Europe outline -->
+            <div class="map-container">
+                <img class="mapEU" src="./Blank_map_of_Europe_(with_disputed_regions).svg" alt="Map of Europe" >
+            </div>
+    
+            <!-- Plane Animation SVG -->
+            <div class="plane-animation">
+                <svg viewBox="0 0 700 700" width="700" height="700">
+                    <!-- Plane Icon -->
+                    <g id="plane">
+                        <text x="0" y="0" font-size="100">&#9992;</text> <!-- Plane icon as text -->
+                    </g>
+                </svg>
+            </div>
         </div>
     </div>
+
+    <!-- timeline -->
+    <div class="timeline">
+        <div class="station-container" id="station1-container">
+            <div class="station" id="station1">
+                <i class="fa-solid fa-graduation-cap image" id="academicHat"></i>
+            </div>
+            <p class="textMyS" id="text1">BA<br>Philology &<br>Linguistics</p>
+        </div>
+        <div class="station-container" id="station2-container">
+            <div class="station" id="station2">
+                <i class="fa-solid fa-graduation-cap image" id="academicHat"></i>
+            </div>
+            <p class="textMyS" id="text2">MA<br>Digital<br>Humanities</p>
+        </div>
+        <div class="station-container" id="station3-container">
+            <div class="station" id="station3">
+                <i class="fa-solid fa-laptop-code"></i></i>
+            </div>
+            <p class="textMyS" id="text3">Self-Taught<br> Web<br>Developer</p>
+        </div>
+        <div class="station-container" id="station4-container">
+            <div class="station" id="station4">
+                <i class="fa-solid fa-graduation-cap image" id="academicHat"></i>
+            </div>
+            <p class="textMyS" id="text4">Coding<br>Factory</p>
+        </div>
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    
 
     
     <!-- 
@@ -136,5 +206,6 @@ FOOTER
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="./My-Page.js"></script>
+    <script src="./my-story.js"></script>
 </body>
 </html>
