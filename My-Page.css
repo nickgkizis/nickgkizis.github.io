@@ -10,7 +10,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Separator */
+/*
+Separator
+*/
 hr {
     width: 10%;
     text-align: left;
@@ -19,12 +21,15 @@ hr {
 .scroll-offset {
     scroll-margin-top: 250px;
 }
-/* Navbar */
+
+/*
+Navbar
+*/
 .main-title{
     text-decoration: none;
 }
 .navbar {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .navbar-brand {
@@ -52,7 +57,9 @@ hr {
 }
 
 
-/* Header and Vision */
+/*
+Header and Vision
+*/
 header {
     width: 100%;
     margin-bottom: 80px;
@@ -63,6 +70,13 @@ header {
     width: 100%;
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+
+.title-text-2 {
+    width: 100%;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
 }
 
@@ -79,6 +93,7 @@ header {
     padding: 20px;
 
 }
+
 /* 
 TYPING EFFECT
 */
@@ -109,7 +124,9 @@ TYPING EFFECT
     50% { border-color: rgb(154, 25, 25); }
 }
 
-/* Titles */
+/*
+Titles
+*/
 .title-container {
     position: relative;
     overflow: hidden;
@@ -137,17 +154,19 @@ TYPING EFFECT
     text-align: right;
 }
 
-/* Body */
+/*
+Body
+*/
 body {
     width: 100%;
     height: 100vh;
     font-family: 'Poiret One', sans-serif;
     color: white;
 }
+
 /* 
 Numbers / Bullets
 */
-
 .margin-up-down {
     margin:100px 0px;
 }
@@ -201,7 +220,7 @@ Numbers / Bullets
 .text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 20px;
-    width: 60%;
+    width: 70%;
     font-size: 2rem;
     text-align: justify;
     padding-left: 2%;
@@ -210,172 +229,8 @@ Numbers / Bullets
 }
 
 /* 
-MY STORY
+Get to Know Me Links 
 */
-.bottom-container{
-    padding: 20px;
-}
-
-.title-text-2 {
-    width: 100%;
-    font-size: 2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: justify;
-}
-/* Plane animation */
-.bottom-container {
-    display: flex;
-    justify-content: flex-start; 
-    align-items: flex-start; 
-}
-
-
-.plane-animation-container {
-    display: flex;
-    flex-direction: column; 
-    align-items:flex-start;
-}
-
-.map-container {
-    margin-bottom: -400px; 
-    margin-right: 250px;
-}
-
-.mapEU {
-    width: 700px; /* Adjust the size of the map */
-    height: 700px;
-    opacity: 0.7; 
-    border-radius: 50%;
-    
-}
-
-.plane-animation {
-    position: relative;
-    width: 400px;
-    height: 700px;
-    margin-left: 0px; /* Adjust to move it closer to the text */
-}
-.plane-animation-container {
-    position: relative;
-    width: 800px;
-    height: 800px;
-}
-
-#planePath {
-    stroke-width: 2;
-}
-
-#plane {
-    fill: #fefefe;
-    transform: translate(15px, 15px); /* Adjust to center the plane on the path */
-}
-
-/* Animation for the plane moving along the path */
-@keyframes fly {
-    from {
-        offset-distance: 60%;
-    }
-    to {
-        offset-distance: 93%;
-    }
-}
-
-#plane {
-    offset-path: path("M900,750 C700,1 200,600 350,50");
-    offset-distance: 0%;
-    animation: fly 5s infinite linear;
-}
-
-/* 
-Timeline
-*/
-.timeline {
-    position: relative;
-    width: 80%;
-    margin-top: 50px;
-    margin-bottom: 450px;
-    padding: 20px;
-    text-align: center;
-
-}
-
-.station-container {
-    position: absolute;
-    width: 120px;
-    z-index: 1;
-    margin: 30px 0;
-    /* background-color: #00e5ff; */
-}
-
-#station1-container {
-    top: 10%;
-    left: 16.6%;
-}
-
-#station2-container {
-    top: 10%;
-    left: 33.3%;
-}
-
-#station3-container {
-    top: 10%;
-    left: 49.9%;
-}
-
-#station4-container {
-    top: 10%;
-    left: 66.4%;
-}
-.station {
-    width: 120px; 
-    height: 120px; 
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ccc;
-    border-radius: 50%;
-    font-size: 50px; 
-    color: #333; 
-    transition: all 1s ease;
-}
-
-.textMyS {
-    margin-top: 30px;
-    font-size: 40px;
-    width: 300px;
-    display: none;
-    text-align: left;
-    left: 0;
-    right: 0;
-    /* background-color: #00e5ff; */
-
-}
-
-.progress-bar {
-    position: absolute;
-    height: 20px;
-    background-color: #ccc;
-    top: 200%;
-    left: 0;
-    transition: width 0.5s ease-in-out; 
-    z-index: 0;
-}
-
-@keyframes reach-station {
-    0% { transform: scale(1); }
-    20% { transform: scale(1.7); } 
-    40% { transform: scale(1); } 
-    60% { transform: scale(1.3); } 
-    100% { transform: scale(1); }
-}
-
-
-.station.blink {
-    animation: reach-station 0.5s ease-in-out; /* Apply animation to icons */
-}
-
-/* Get to Know Me Links */
 .link-main {
     margin-top: 150px;
     display: flex;
@@ -443,7 +298,10 @@ Timeline
 #icon3 {
     transition-delay: 3s;
 }
-/* Arrow to Top */
+
+/*
+Arrow to Top
+*/
 .arrow-box {
     background-color: #ffffff;
     padding: 10px;
@@ -501,7 +359,9 @@ Timeline
     }
 }
 
-/* Footer */
+/* 
+Footer
+*/
 footer {
     background-color: #212529;
     color: #ffffff;
@@ -527,57 +387,10 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-/* 
-PROJECT BOARD
-*/
-.project-container{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.project-board{
-    list-style-type: none;
-    width:30%;
-    height:fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    margin-top: 50px;
-    padding: 20px;
-    /* border: 3px solid black; */
 
-}
-.project-item{
-    font-size: 2rem;
-    margin: 10px;
-    border:1px;
-    border-radius: 40px;
-    border-style:ridge;
-    background-color:#212529;
-    width: fit-content;
-    text-align: center;
-    transition: all 1s ease-in-out;
-    text-decoration: none;
-
-}
-.project-item:hover{
-    /* background-color: #535b62; */
-    color: #ffffff;
-    transform:scale(1.3);
-}
-.project-item a:active{
-    color: #000000;
-}
-.project-item a{
-    color: white;
-    text-decoration: none;
-
-}
 /* 
 under construction
 */
-
 .main-under-construction {
     margin: 30px 0px 300px 0px;
     display: flex;
@@ -604,7 +417,9 @@ under construction
     animation: scaleUp 4s forwards;
 }
 
-/* Secret Message */
+/*
+Secret Message
+*/
 .secret {
     display: flex;
     flex-direction: column;
@@ -635,12 +450,10 @@ under construction
     }
 }
 
-
-
 /* 
 SMALLER SCREENS
 */
-@media (max-width: 768px){
+@media (max-width: 1100px){
     .title-text{
         width: 100%;
         justify-content:center;
@@ -659,5 +472,11 @@ SMALLER SCREENS
     .container-1{
         display:flex;
         flex-direction: column;
+    }
+    .navbar {
+        font-size: 1.7rem;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
     }
 }

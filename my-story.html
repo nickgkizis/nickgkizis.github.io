@@ -10,6 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./My-Page.css">
+    <link rel="stylesheet" href="./my-story.css">
 </head>
 <body>
 <!-- 
@@ -39,7 +40,7 @@
                     </li>
                     <div class="vr"></div>
                     <li class="nav-item dropdown-item">
-                        <a href="./other-projects.html" class="nav-link" role="button"  >Other Projects</a>
+                        <a href="./other-projects.html" class="nav-link" role="button"  >Projects & Articles</a>
                     </li>
                     
                 </ul>
@@ -91,6 +92,7 @@
     
         <!-- Plane Animation Container -->
         <div class="plane-animation-container">
+
             <!-- Abstract Europe outline -->
             <div class="map-container">
                 <img class="mapEU" src="./Blank_map_of_Europe_(with_disputed_regions).svg" alt="Map of Europe" >
@@ -99,6 +101,7 @@
             <!-- Plane Animation SVG -->
             <div class="plane-animation">
                 <svg viewBox="0 0 700 700" width="700" height="700">
+                    <path id="planePath" d="M900,750 C700,1 200,600 350,50" fill="none" stroke="#fefefe" stroke-width="2" />
                     <!-- Plane Icon -->
                     <g id="plane">
                         <text x="0" y="0" font-size="100">&#9992;</text> <!-- Plane icon as text -->
@@ -106,6 +109,7 @@
                 </svg>
             </div>
         </div>
+
     </div>
 
     <!-- timeline -->
