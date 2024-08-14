@@ -167,6 +167,10 @@ Smaller screens
     .bottom-container{
         display:flex;
         flex-direction: column;
+        align-items: flex-start;
+    }
+    .plane-animation-container{
+        scale: 0.7;
     }
     
     .title-text-2{
