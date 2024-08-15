@@ -1,10 +1,12 @@
 
 article{
-    padding: 10% 20%;
+    margin: 0% 15%;
+    padding: 5%;
     font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
 }
 article h1{
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     margin:20px 0;
 }
@@ -15,4 +17,19 @@ article h2{
 article p{
     font-size: 1.5rem;
     margin:20px 0;
+}
+article h3{
+    display: flex;
+    justify-content: right;
+    color: grey;
+    font-size: 1.3rem;
+    width: fit-content;
+    border-bottom: 1px solid grey;
+}
+
+@media(max-width:900px) {
+    article{
+        margin: 0;
+        padding:5%;
+    }
 }
