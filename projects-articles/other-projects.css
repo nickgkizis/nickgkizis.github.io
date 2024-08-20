@@ -72,11 +72,11 @@ PROJECT BOARD
 /* 
 Dropdown
 */
-.nav-item{
+.project-box .nav-item{
     font-size: 1.5rem;
 }
 
-.nav-link{
+.project-box .nav-link{
     color: white;
 
 }
