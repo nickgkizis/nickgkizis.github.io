@@ -61,10 +61,18 @@ Navbar
 /*
 Header and Vision
 */
-header {
+.out-box {
+    margin-top: 60px;
+    margin-bottom: 200px;
     width: 100%;
-    margin-bottom: 80px;
-    padding: 20px;
+}
+.h-box{
+    background-color: #292c2c;
+    width:fit-content;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
 }
 
 .title-text {
@@ -339,6 +347,7 @@ Arrow to Top
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index:999;
 }
 
 .arrow-icon {
@@ -418,4 +427,14 @@ SMALLER SCREENS
     .navbar-brand {
         font-size: 1.5rem;
     }
+}
+
+@media (max-width: 1100px){
+    .to-top {
+        position:sticky;
+        bottom: 0px;
+        right: 70px;
+    }
+    
+    
 }

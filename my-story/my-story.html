@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="./my-story.css">
 </head>
 <body>
+
+<!-- GRADIENT for inner content  -->
+<div class="bg-dark bg-gradient">
 <!-- 
     NAVBAR
 -->
@@ -58,36 +61,33 @@
             
         </div>
     </nav>
-<!-- GRADIENT for inner content  -->
-<div class="bg-dark bg-gradient">
+
     <!-- 
     MY STORY
     -->
-    <div id="my-story" class="scroll-offset"></div>
-        <div class="hr3">My Story</h1><hr><hr>
+
+    <div id="my-story" class="scroll-offset">
+        <div class="hr3">My Story</h1><hr><hr></div>
     </div>
     <div class="bottom-container">
-        <div class="title-text-2">
-            <p>
-                I am a programmer from Greece, <br> 
-                but that is only a part of my journey. <br><br> 
-                Growing up I had a diverse set of interests, <br>
-                which probably had an impact on my story. <br><br> 
-                I studied Philology and Linguistics at <br> 
-                Aristotle University, in my hometown, Thessaloniki. <br> 
-                After I graduated I felt something was missing, <br>
-                I wanted to transition towards something more technical. <br><br> 
-                My curiosity led me to move to Sweden <br> where I studied at Uppsala University, <br> 
-                and earn my Master's degree in Digital Humanities,<br>
-                a field that explores the digitalization of cultural heritage.<br><br> 
-                Moving abroad was a challenge on its own, <br> 
-                let alone studying and working in a foreign country. <br>
-                But no matter the challenge, <br> 
-                I felt that I was making my dreams come to life.<br><br> 
-                After my graduation I felt confident that I knew exactly <br> 
-                what I wanted to do, that being becoming a web developer! <br>
-                To achieve my goal I started a course about Full-Stack Development <br>at Athens University of Economics and Business.
-            </p>
+        <div class="title-text-2 txt">
+            <p>I am a programmer from Greece, but that is only a part of my journey.</p>
+            <p>I studied Philology and Linguistics at
+            Aristotle University, in my hometown, Thessaloniki.
+            After I graduated I felt something was missing,
+            I wanted to transition towards something more technical. </p>
+            <p>My curiosity led me to Sweden where I studied at Uppsala University,
+            and earn my Master's degree in Digital Humanities,
+            a field that explores the digitalization of cultural heritage.
+            Moving abroad was a challenge on its own,
+            let alone studying and working in a foreign country.
+            But no matter the challenge,
+            I felt that I was making my dreams come to life.</p>
+            <p>After my graduation I felt confident that I knew exactly
+            what I wanted to do, that being becoming a web developer!
+            To achieve my goal I started a course about Full-Stack Development
+            at Athens University of Economics and Business.</p>
+                
         </div>
     
         <!-- Plane Animation Container -->
@@ -181,31 +181,27 @@
     </div> 
 
     <!-- 
+    FOOTER
+    -->
+    <footer class="bg-dark bg-gradient text-light text-center p-4">
+        <div class="container">
+            <h4>Thank You for Visiting!</h4>
+            <p>This project is a labor of love and marks the beginning of my coding journey. Your visit means the world to me!</p>
+            <p>If you'd like to see more of my work, feel free to explore my <a href="https://github.com/nickgkizis" target="_blank">GitHub</a>.</p>
+            <p>Have feedback or just want to say hello? Connect with me through my <a href="https://www.linkedin.com/in/nikolaos-gkizis-chatziantoniou-121b83208/" target="_blank">Linked In</a> profile!</p>
+            <p>Happy coding!</p>
+        </div>
+    </footer>
+    <!-- 
     ARROW SCROLL TO TOP
     -->
-        <div id="backToTopButton" class="to-top" onclick="scrollToTop()">
-            <span>Back to Top</span>
-            <div class="arrow-box">
-                <span><i class="fas fa-arrow-up arrow-icon"></i></span>
-            </div>
+    <div id="backToTopButton" class="to-top" onclick="scrollToTop()">
+        <span>Back to Top</span>
+        <div class="arrow-box">
+            <span><i class="fas fa-arrow-up arrow-icon"></i></span>
         </div>
-
-</div>
-
-
-<!-- 
-FOOTER
--->
-<footer class="bg-dark bg-gradient text-light text-center p-4">
-    <div class="container">
-        <h4>Thank You for Visiting!</h4>
-        <p>This project is a labor of love and marks the beginning of my coding journey. Your visit means the world to me!</p>
-        <p>If you'd like to see more of my work, feel free to explore my <a href="https://github.com/nickgkizis" target="_blank">GitHub</a>.</p>
-        <p>Have feedback or just want to say hello? Connect with me through my <a href="https://www.linkedin.com/in/nikolaos-gkizis-chatziantoniou-121b83208/" target="_blank">Linked In</a> profile!</p>
-        <p>Happy coding!</p>
     </div>
-</footer>
-
+</div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JavaScript -->
