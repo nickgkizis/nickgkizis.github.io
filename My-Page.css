@@ -139,6 +139,7 @@ Titles
 .title-container {
     position: relative;
     overflow: hidden;
+    height: auto;
     width: 100%;
 }
 
@@ -147,7 +148,8 @@ Titles
     display: flex;
     flex-direction: column;
     margin: auto;
-    font-size: 8rem;
+    font-size:10rem;
+    font-weight: bold;
     padding: 30px;
     position: relative;
     transition: all 0.1s ease-in-out;    
@@ -183,20 +185,21 @@ Numbers / Bullets
 .box {
     /* border: 2px solid black; */
     /* position:relative; */
-    width: 120px;
-    height: 120px;
+    width: 15rem;
+    height: 15rem;
     background-color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 1s ease;
-    
+    border-style:dashed;
+    color: #212529;
 }
 
 .link-icon {
     color: #343a40;
-    font-size: 7rem;
+    font-size: 10rem;
     transition: all 1s ease;
 }
 
@@ -209,7 +212,7 @@ Numbers / Bullets
 .dot {
     /* position: absolute; */
     color: #ffffff;
-    font-size: 0.5rem;
+    font-size:1.7rem;
     /* transform: translate(-50%, -50%); */
     transition: opacity 2s ease-in;
 }
@@ -233,6 +236,9 @@ Numbers / Bullets
     font-size: 2rem;
     text-align: justify;
     padding-left: 2%;
+    background-color:#292c2c;
+    border-radius: 25px;
+    padding: 30px;
 
     
 }
