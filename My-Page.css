@@ -41,6 +41,12 @@ hr {
 /*
 Navbar
 */
+.logo-img img{
+    width: 150px;
+    height: 130px;
+    background-size:cover;
+    padding: 5px;
+}
 .main-title{
     text-decoration: none;
 }
