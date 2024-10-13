@@ -43,7 +43,7 @@ hr {
 Navbar
 */
 .logo-img img{
-    width: 150px;
+    width: 140px;
     height: 130px;
     background-size:cover;
     padding: 5px;
@@ -166,9 +166,11 @@ Skills
 }
 .s-cont{
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 300px;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -192,9 +194,13 @@ Skills
     flex-wrap: wrap;
     justify-content: space-around;
     transition:all 1.5s ease-in-out;
+    
 }
 .s-in:hover{
     border:3px solid white;
+}
+.s-mid{
+    margin-bottom: 100px;
 }
 
 .s-mid:hover .s-in{
@@ -338,10 +344,59 @@ Get to Know Me Links
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    border:1px solid white;
+    /* padding: 10px; */
+    /* border: 1px solid white; */
+    border-radius: 55px;
+    position: relative;
+    overflow: hidden;
+}
+.link-main::before{
+    content:'';
+    position: absolute;
+    width: 200px;
+    height: 600px;
+    background:linear-gradient(#00ccff, #d500f9);
+    animation: rotate-clock 7s linear infinite;
     border-radius: 50px;
-
+}
+.link-container::after{ 
+    content:'';
+    position: absolute;
+    background-color:#212529;
+    inset: 5px;
+    border-radius: 50px;
+}
+/* .item::before{
+    content:'';
+    position: absolute;
+    width: 200px;
+    height: 600px;
+    background:linear-gradient(#00ccff, #d500f9);
+    animation: rotate 7s linear infinite;
+    border-radius: 50px;
+}
+.item::after{ 
+    content:'';
+    position: absolute;
+    background-color:#212529;
+    inset: 5px;
+    border-radius: 50px;
+} */
+@keyframes rotate-clock{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate-a-clock{
+    from{
+        transform: rotate(360deg)
+    }
+    to{
+        transform: rotate(0deg);
+    }
 }
 .link-t{
     display: flex;
@@ -350,43 +405,63 @@ Get to Know Me Links
     height:fit-content;
     /* border: 1px solid white; */
     border-radius: 150px;
-    padding: 55px 15px;
+    padding: 0px 10px 0px 35px;
+    z-index:2;
 }
 
 .box-gtnm {
     position: relative;
     width: 11rem;
     height: 11rem;
-    background-color:transparent;
+    /* background-color:transparent; */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 2s ease;
+    /* transition: all 2s ease; */
     /* border: 1px white; */
     /* border-style:solid; */
+    z-index:2;
+    background: #212529;
 }
 
 .link-icon-s-gtnm {
     color: #fff;
-    font-size: 7rem;
+    font-size: 8rem;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
+
+.item{
+    border-radius: 50%;
+    padding: 4px;
+    margin: 5px;
+    z-index: 4;
+}
+
+.item:first-child:hover,
+.item:last-child:hover{
+    background:linear-gradient(#00ccff, #d500f9);
+    scale: 1.1;
+    animation: rotate-clock 20s linear infinite;
+}
+
+.item:nth-child(2):hover{
+    background:linear-gradient(#00ccff, #d500f9);
+    scale: 1.1;
+    animation: rotate-a-clock 20s linear infinite;
+}
+
 .box-gtnm:hover {
-    /* background-color: black; */
+    background-color: black;
     border: 1px transparent;
 }
 
 .box-gtnm:hover .link-icon-s-gtnm {
     color: #ffffff;
-    scale: 1.3;
-    opacity: 1;
+    /* opacity: 1; */
 }
 
-.item{
-    /* margin:0px 10px; */
-}
 .link-main h1 {
     justify-content: center;
     text-align: center;
@@ -403,7 +478,7 @@ Get to Know Me Links
     height: fit-content;
     width: fit-content;
     /* margin: 40px; */
-    /* padding: 10px; */
+    padding: 20px;
     /* background-color:transparent; */
     /* border: 1px solid; */
     border-radius: 150px;
