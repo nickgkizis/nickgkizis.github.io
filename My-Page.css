@@ -354,7 +354,7 @@ Get to Know Me Links
     content:'';
     position: absolute;
     width: 200px;
-    height: 600px;
+    height: 1000px;
     background:linear-gradient(#00ccff, #d500f9);
     animation: rotate-clock 7s linear infinite;
     border-radius: 50px;
@@ -635,6 +635,7 @@ SMALLER SCREENS
 }
 
 @media (max-width:600px) {
+    
     .s-mid {
         width: 100%;
         display: flex;
@@ -651,5 +652,30 @@ SMALLER SCREENS
         color: #fff;
         background-image: linear-gradient(to right, #343a40, #212529);
         }
+
+}
+@media (max-width:370px) {
+    .h-box{
+        width: 100%;
+    }
+    .s-mid h1{
+        font-size: 3rem;
+    }
+    .s-in{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+    }
+
+    .link-main{
+        width: 100%;
+        scale: 0.8;
+    }
+
+    .link-main .title, .item{
+        scale: 0.8;
+    }
+    
 
 }
