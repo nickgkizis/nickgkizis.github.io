@@ -14,7 +14,7 @@ PROJECT BOARD
     justify-content: space-around;
 }
 .project-box{
-    margin: 20px;
+    margin:30px 0px 200px 0px;
     border-radius: 10px;
     background-color:#212529;
     width: fit-content;

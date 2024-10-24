@@ -334,7 +334,7 @@ Numbers / Bullets
 /*
 Projects
 */
-/* .p-title{
+.p-title{
     display: flex;
     justify-content: center;
     margin: 30px;
@@ -371,9 +371,9 @@ Projects
     transition: all 1s ease-in-out;
 }
 .p-img img{
-    width: 30vw;
-    height: 40vh;
-    object-fit:contain
+    width: 35vw;
+    height: 45vh;
+    object-fit:contain;
 }
 .p-el a {
     align-items: center;
@@ -387,12 +387,18 @@ Projects
     height: fit-content;
 }
 .p-el h2{
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
 }
 .p-el p{
-    font-size: 2.5rem;
-} */
+    font-size: 2rem;
+}
+
+.git a{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 
