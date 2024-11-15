@@ -21,12 +21,15 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark text-light" id="grad">
         <div class="container-fluid ">
-            <a class="main-title" href="index.html">
-                <!-- <h1 class="navbar-brand">Nikolaos <br>&ensp;Gkizis <br>&emsp;Chatziantoniou
-                </h1> -->
-                <div class="logo-img"><img src="./img/logo.png" alt=""></div>
-                
-            </a>
+            <div class="main-logo">
+                <a class="main-title" href="index.html">
+                    <!-- <h1 class="navbar-brand">Nikolaos <br>&ensp;Gkizis <br>&emsp;Chatziantoniou
+                    </h1> -->
+                    <div class="logo-img"><img src="./img/logo.png" alt=""></div>
+                    
+                </a>
+            </div>
+            
             <!-- <div class="vr"></div> -->
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -35,22 +38,30 @@
             <div class="navbar-collapse collapse" id="navbarCollapse">
 
                 <ul class="navbar-nav ms-auto ">
+                    <!-- <li class="nav-item dropdown-item">
+                        <a href="./index.html" class="nav-link" role="button"><i class="fa-solid fa-house"></i></a>
+                    </li>
+                    <div class="vr"></div> -->
+                    <li class="nav-item dropdown-item">
+                        <a href="#proj" class="nav-link" role="button"  >Projects</a>
+                    </li>
+                    <!-- <div class="vr"></div> -->
                     <li class="nav-item dropdown-item">
                         <a href="./my-vision/my-vision.html" class="nav-link">My Vision</a>
                     </li>
-                    <div class="vr"></div>
+                    <!-- <div class="vr"></div> -->
                     <li class="nav-item dropdown-item">
                         <a  href="./my-story/my-story.html" class="nav-link" >My Story</a>
                     </li>
-                    <div class="vr"></div>
+                    <!-- <div class="vr"></div> -->
                     <li class="nav-item dropdown-item">
-                        <a href="./projects-articles/other-projects.html" class="nav-link" role="button"  >Projects & Articles</a>
+                        <a href="./projects-articles/other-projects.html" class="nav-link" role="button"  >Resources</a>
                     </li>
                     
                 </ul>
 
                 <ul class="navbar-nav ms-auto">
-                    <div class="vr"></div>
+            
                     <li class="nav-item dropdown-item">
                         <a href="#get-to-know-me" class="nav-link">Get To Know Me
                         </a>
@@ -80,8 +91,8 @@
                             <span id="typing-text"></span>
                         </div>
                     </div>
-                    <br>It was the spark that ignited my passion <br>for solving problems, <br> crafting digital experiences, <br>exploring new ideas, <br>and, turning creative concepts into reality! <br><br>
-                    Right now I am pursuing a Junior position <br> as a Web Developer. <br><br>
+                    <br>It was the spark that ignited my passion <br>for solving problems, <br> crafting digital experiences, <br>exploring new ideas, <br>& turning creative concepts into reality! <br><br>
+                    Currently pursuing a Junior position <br> as a Web Developer. <br><br>
                     Find out more about me and my passion in coding <br> by exploring my website.
                 </div>
             </header>
@@ -97,14 +108,15 @@
         <div class="s-mid">
             <h1>Frontend & Design</h1>
             <div class="s-in">
+                <div class="s-el"><img src="./img/Laravel.svg" alt="An SVG image"></div>
+                <div class="s-el"><img src="./img/Angular.svg" alt="An SVG image"></div>
+                <div class="s-el"><img src="./img/React.svg" alt="An SVG image"></div>
                 <div class="s-el"><img src="./img/HTML.svg" alt="An SVG image"></div>
                 <div class="s-el"><img src="./img/CSS.svg" alt="An SVG image"></div>
                 <div class="s-el"><img src="./img/JavaScript.svg" alt="An SVG image" ></div>
                 <div class="s-el"><img src="./img/Figma.svg" alt="An SVG image"></div>
                 <div class="s-el"><img src="./img/Canva.svg" alt="An SVG image"></div>
-                <div class="s-el"><img src="./img/GIMP.svg" alt="An SVG image"></div>
-                <div class="s-el"><img src="./img/Angular.svg" alt="An SVG image"></div>
-                <div class="s-el"><img src="./img/React.svg" alt="An SVG image"></div>
+                <div class="s-el"><img src="./img/GIMP.svg" alt="An SVG image"></div> 
             </div>
         </div>
 
@@ -112,6 +124,7 @@
         <div class="s-mid">
             <h1>Backend & Development</h1>
             <div class="s-in">
+                <div class="s-el"><img src="./img/PHP-logo.svg" alt="An SVG image" ></div>
                 <div class="s-el"><img src="./img/Python.svg" alt="An SVG image" ></div>
                 <div class="s-el"><img src="./img/Django.svg" alt="An SVG image" ></div>
                 <div class="s-el"><img src="./img/Java.svg" alt="An SVG image" ></div>
@@ -132,10 +145,22 @@
     PROJECTS & ARTICLES
     -->
 
-    <h1 class="p-title">Mini Projects</h1>
+    <h1 id="proj" class="p-title">Mini Projects</h1>
     <div class="p-cont">
         <div class="p-mid">
             <div class="p-in">
+
+                <div class="p-el">
+                    <div class="p-img">
+                        <img src="./img/blog.png">
+                    </div>
+                    <a href="https://github.com/nickgkizis/final-project-CF-blog" target="_blank">
+                        <div class="p-text">
+                            <h2>Blog Site</h2>
+                        </div>
+                        <p>A PHP Laravel - Fullstack Blog with authorization, authentication, CRUD operations for users and articles, persistent DB using MySQL  &ensp; <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                    </a>  
+                </div>
 
                 <div class="p-el">
                     <div class="p-img">
