@@ -910,7 +910,7 @@ SMALLER SCREENS
     
 
 }
-@media (max-width:380px) {
+@media (max-width:400px) {
     .h-box{
         width: 90vw;
     }
