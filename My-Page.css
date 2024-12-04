@@ -196,52 +196,173 @@ Skills
     margin: 5rem;
     transition:all 1.5s ease-in-out;
 }
-.s-in{
-    border:3px solid transparent;
-    height:fit-content;
-    width: 50rem;
-    /* background-color: #292c2c; */
-    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='68' height='68' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(26, 32, 44,1)'/%3E%3Cpath d='M0 20h6v4h-6zM40 20h6v4h-6zM40 20h6v4h-6z' fill='rgba(74, 85, 104,1)'/%3E%3Cpath d='M20 20h6v4h-6zM60 20h6v4h-6z' fill='%231a202c'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
-    /* opacity: 0.9; */
-    border-radius: 50px;
+
+
+/* 
+Carousel
+*/
+.wrapper {
+  margin-top: 2rem;
+  width: 90%;
+  width: 90vw;
+  height: 30vh;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+.itemLeft {
+    width: 160px;
+    height: 160px; 
+    border-radius: 50%; 
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    transition:all 1.5s ease-in-out;
-    
-}
-.s-in:hover{
-    border:3px solid white;
-}
-.s-mid{
-    margin-bottom: 100px;
-}
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-name: scrollLeft;
+    left: max(calc(200px * 9), 100%);
+    background-color: rgb(255, 255, 255); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin: 20px; /* Space between circles */
+  }
+  
+  
 
-.s-mid:hover .s-in{
-    transition:all 1.5s ease-in-out;
-}
-.s-mid:hover h1 {
-    scale: 1.2;
-    transition: all 1.5s ease-in-out;
-}
-
-.s-el{
-    background-color:rgb(255, 255, 255);
-    margin: 20px;
-    padding: 20px;
+  .itemRight {
+    width: 160px; 
+    height: 160px; 
     border-radius: 50%;
-    transition: all 1s ease-in-out;
-}
-.s-el:hover{
-    scale: 1.2;
-}
-.s-cont img{
-    border-radius: 15px;
-    object-fit: fill;
-
-}
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-name: scrollRight; /* Rightward scrolling animation */
+    right: max(calc(200px * 12), 100%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin: 20px; /* Space between circles */
+  }
+  
+  @keyframes scrollRight {
+    to {
+      right: -200px;
+    }
+  }
+  
+  .itemRight img {
+    width: 70%; /* Fit the image within the container */
+    height: 70%; /* Maintain a square aspect ratio */
+    object-fit:contain; /* Prevent distortion of the image */
+    background-color: transparent;
+  }
+  .itemLeft img {
+    width: 70%; /* Fit the image within the container */
+    height: 70%; /* Maintain a square aspect ratio */
+    object-fit:contain; /* Prevent distortion of the image */
+    background-color: transparent;
+  }
+  
+  .l-item1 {
+    animation-delay: calc(30s / 9 * (9 - 1) * -1);
+  }
+  
+  .l-item2 {
+    animation-delay: calc(30s / 9 * (9 - 2) * -1);
+  }
+  
+  .l-item3 {
+    animation-delay: calc(30s / 9 * (9 - 3) * -1);
+  }
+  
+  .l-item4 {
+    animation-delay: calc(30s / 9 * (9 - 4) * -1);
+  }
+  
+  .l-item5 {
+    animation-delay: calc(30s / 9 * (9 - 5) * -1);
+  }
+  
+  .l-item6 {
+    animation-delay: calc(30s / 9 * (9 - 6) * -1);
+  }
+  
+  .l-item7 {
+    animation-delay: calc(30s / 9 * (9 - 7) * -1);
+  }
+  
+  .l-item8 {
+    animation-delay: calc(30s / 9 * (9 - 8) * -1);
+  }
+  
+  .l-item9 {
+    animation-delay: calc(30s / 9 * (9 - 9) * -1);
+  }
+  .r-item1 {
+    animation-delay: calc(30s / 12 * (12 - 1) * -1);
+  }
+  
+  .r-item2 {
+    animation-delay: calc(30s / 12 * (12 - 2) * -1);
+  }
+  
+  .r-item3 {
+    animation-delay: calc(30s / 12 * (12 - 3) * -1);
+  }
+  
+  .r-item4 {
+    animation-delay: calc(30s / 12 * (12 - 4) * -1);
+  }
+  
+  .r-item5 {
+    animation-delay: calc(30s / 12 * (12 - 5) * -1);
+  }
+  
+  .r-item6 {
+    animation-delay: calc(30s / 12 * (12 - 6) * -1);
+  }
+  
+  .r-item7 {
+    animation-delay: calc(30s / 12 * (12 - 7) * -1);
+  }
+  
+  .r-item8 {
+    animation-delay: calc(30s / 12 * (12 - 8) * -1);
+  }
+  
+  .r-item9 {
+    animation-delay: calc(30s / 12 * (12 - 9) * -1);
+  }
+  
+  .r-item10 {
+    animation-delay: calc(30s / 12 * (12 - 10) * -1);
+  }
+  
+  .r-item11 {
+    animation-delay: calc(30s / 12 * (12 - 11) * -1);
+  }
+  
+  .r-item12 {
+    animation-delay: calc(30s / 12 * (12 - 12) * -1);
+  }
 
 /*
 Titles
@@ -526,13 +647,11 @@ Get to Know Me Links
 .item:first-child:hover,
 .item:last-child:hover{
     background:linear-gradient(#00ccff, #d500f9);
-    scale: 1.1;
     animation: rotate-clock 20s linear infinite;
 }
 
 .item:nth-child(2):hover{
     background:linear-gradient(#00ccff, #d500f9);
-    scale: 1.1;
     animation: rotate-a-clock 20s linear infinite;
 }
 
@@ -757,6 +876,17 @@ SMALLER SCREENS
         background-size:cover;
         padding: 5px;
     }
+    .dropdown-item{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding:10px;
+        width:60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 }
 @media (max-width:600px) {
@@ -777,10 +907,14 @@ SMALLER SCREENS
         background-image: linear-gradient(to right, #343a40, #212529);
         }
 
+    
+
 }
-@media (max-width:370px) {
+@media (max-width:380px) {
+    
+
     .h-box{
-        width: 100%;
+        width: 90vw;
     }
     .s-mid h1{
         font-size: 3rem;
@@ -790,16 +924,30 @@ SMALLER SCREENS
         padding: 0;
         margin: 0;
         align-items: center;
+        background: #16191c;
     }
 
     .link-main{
-        width: 100%;
+        width: 95vw;
         scale: 0.8;
     }
 
     .link-main .title, .item{
         scale: 0.8;
     }
+
+    .dropdown-item{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding:10px;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
     
 
 }
