@@ -924,9 +924,11 @@ SMALLER SCREENS
         align-items: center;
         background: #16191c;
     }
-
+    .p-mid{
+        width: 100%;
+    }
     .link-main{
-        width: 100vw;
+        width: 90vw;
         scale: 0.7;
     }
     
