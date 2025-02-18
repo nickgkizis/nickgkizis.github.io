@@ -934,6 +934,16 @@ SMALLER SCREENS
         display: flex;
         flex-wrap: wrap;
     }
+    .out-box .hr1{
+        font-size: 1.7rem;
+
+    }
+    .out-box .hr2{
+        font-size: 1.1rem;
+    }
+    .out-box .title-text-2{
+        font-size: 0rem;
+    }
     /* .new-bg{
         background-color: #343a40;
         color: #fff;
@@ -991,6 +1001,12 @@ SMALLER SCREENS
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .container-1 .text{
+        font-size: 1rem;
+    }
+    .p-el p{
+        font-size: 1.2rem !important;
     }
     
     

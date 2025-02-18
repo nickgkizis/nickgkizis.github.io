@@ -289,12 +289,24 @@ Smaller screens
     .plane-animation-container{
         margin-left: 0px !important;
         scale: 0.4;
+        /* border: 1px solid salmon; */
+        /* scale: 0;
+        font-size: 0; */
+        display:none;
     }
     .timeline{
-        width: 65%;
+        margin-bottom:20rem;
+        margin-left: 0;
+        /* border: 2px solid silver; */
+        width: 100%;
+        scale: 0.5;
     }
     .progress-bar {
         display: none;
+    }
+    .bottom-container .title-text-2{
+        padding: 3rem;
+        font-size: 1rem;
     }
     
 }
