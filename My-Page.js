@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Function to scroll to top with smooth behavior
+document.addEventListener("DOMContentLoaded", function () {
+  // --- Back to Top Functionality ---
   function scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -7,11 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Function to toggle Back to Top button visibility based on scroll position
   function toggleBackToTopButton() {
-    const navigationBar = document.getElementById("grad"); // Replace 'grad' with your navigation bar ID
+    const navigationBar = document.getElementById("grad"); // Replace 'grad' with your navigation bar ID if needed
     const backToTopButton = document.getElementById("backToTopButton");
-
     if (window.scrollY > navigationBar.offsetTop + navigationBar.offsetHeight) {
       backToTopButton.style.display = "flex";
     } else {
@@ -19,16 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Smooth scroll to top button click event listener
   const backToTopButton = document.getElementById("backToTopButton");
   if (backToTopButton) {
     backToTopButton.addEventListener("click", scrollToTop);
   }
+  window.addEventListener("scroll", toggleBackToTopButton);
 
-  // Listen for scroll events to toggle Back to Top button visibility
-  document.addEventListener("scroll", toggleBackToTopButton);
-
-  // Function to handle scroll effects on titles, boxes, and get-to-know-me container
+  // --- Scroll Effects for Titles, Boxes, and "Get-to-Know-Me" Container ---
   function handleScrollEffects() {
     const titles = document.querySelectorAll(".title");
     const boxes = document.querySelectorAll(".box");
@@ -44,21 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const windowWidth = window.innerWidth;
     const maxTranslateValue = windowWidth / 20;
 
+    // Update titles
     titles.forEach((title) => {
       const titlePosition = title.getBoundingClientRect().top + scrollPosition;
-      const titleCenter = windowWidth / 2; // Center of the screen
-
-      // Calculate scroll effect based on distance from the center of the screen
+      const titleCenter = windowWidth / 2;
       let scrollEffect =
         ((titlePosition - titleCenter) / windowWidth) * maxTranslateValue;
-
-      // Clamp the scrollEffect to not exceed maxTranslateValue
       scrollEffect = Math.max(
         -maxTranslateValue,
         Math.min(maxTranslateValue, scrollEffect)
       );
 
-      // Adjust opacity based on scroll position
       let opacityEffect;
       if (scrollPosition <= titlePosition - window.innerHeight / 4) {
         opacityEffect = 1;
@@ -71,155 +62,116 @@ document.addEventListener('DOMContentLoaded', function() {
             (window.innerHeight / 2);
       }
 
-      // Adjust font size based on opacity
       const maxFontSize = 60;
       const minFontSize = 20;
       const fontSize =
         minFontSize + (maxFontSize - minFontSize) * opacityEffect;
       title.style.fontSize = `${fontSize}px`;
-
-      // Apply opacity and font size changes
       title.style.opacity = opacityEffect;
     });
 
+    // Update boxes
     boxes.forEach((box) => {
       const boxTop = box.getBoundingClientRect().top + scrollPosition;
       const triggerPoint = window.innerHeight / 2;
-
       if (scrollPosition > boxTop - triggerPoint) {
         box.style.backgroundColor = "transparent";
         const linkIcon = box.querySelector(".link-icon");
         const dot = box.querySelector(".dot");
-
-        if (linkIcon) {
-          linkIcon.style.color = "#ffffff";
-        }
-
-        if (dot) {
-          dot.style.color = "#ffffff";
-        }
+        if (linkIcon) linkIcon.style.color = "#ffffff";
+        if (dot) dot.style.color = "#ffffff";
       } else {
         box.style.backgroundColor = "";
         const linkIcon = box.querySelector(".link-icon");
         const dot = box.querySelector(".dot");
-
-        if (linkIcon) {
-          linkIcon.style.color = "";
-        }
-
-        if (dot) {
-          dot.style.color = "";
-        }
+        if (linkIcon) linkIcon.style.color = "";
+        if (dot) dot.style.color = "";
       }
     });
 
-    const containerTop =
-      getToKnowMeContainer.getBoundingClientRect().top + scrollPosition;
-    const triggerPoint = window.innerHeight / 1.5;
-
-    // Introduce staggered delay for the titles
-    if (scrollPosition > containerTop - triggerPoint) {
-      setTimeout(() => {
-        title1.style.opacity = 1;
-      }, 2000); // Immediately
-      setTimeout(() => {
-        title2.style.opacity = 1;
-      }, 3000); // After 1 seconds
-      setTimeout(() => {
-        title3.style.opacity = 1;
-      }, 3000); // After 2 seconds
-      setTimeout(() => {
-        title4.style.opacity = 1;
-      }, 4000); // After 3 seconds
-
-      // Fade in icons all at once
-      icon1.style.opacity = 1;
-      icon2.style.opacity = 1;
-      icon3.style.opacity = 1;
-    } else {
-      // Reset opacity if scrolled out of view
-      title1.style.opacity = 0;
-      title2.style.opacity = 0;
-      title3.style.opacity = 0;
-      title4.style.opacity = 0;
-      icon1.style.opacity = 0;
-      icon2.style.opacity = 0;
-      icon3.style.opacity = 0;
+    // Handle get-to-know-me container titles and icons
+    if (getToKnowMeContainer) {
+      const containerTop =
+        getToKnowMeContainer.getBoundingClientRect().top + scrollPosition;
+      const triggerPoint = window.innerHeight / 1.5;
+      if (scrollPosition > containerTop - triggerPoint) {
+        setTimeout(() => {
+          title1.style.opacity = 1;
+        }, 1000);
+        setTimeout(() => {
+          title2.style.opacity = 1;
+        }, 2000);
+        setTimeout(() => {
+          title3.style.opacity = 1;
+        }, 2000);
+        setTimeout(() => {
+          title4.style.opacity = 1;
+        }, 3000);
+        if (icon1) icon1.style.opacity = 1;
+        if (icon2) icon2.style.opacity = 1;
+        if (icon3) icon3.style.opacity = 1;
+      } else {
+        title1.style.opacity = 0;
+        title2.style.opacity = 0;
+        title3.style.opacity = 0;
+        title4.style.opacity = 0;
+        if (icon1) icon1.style.opacity = 0;
+        if (icon2) icon2.style.opacity = 0;
+        if (icon3) icon3.style.opacity = 0;
+      }
     }
   }
-
-  // Listen to the scroll event
   window.addEventListener("scroll", handleScrollEffects);
-
-  // Initial call to handle scroll effects on page load
   handleScrollEffects();
 
-  // Listen for scroll events to handle scroll effects
-  document.addEventListener("scroll", handleScrollEffects);
-
-  // Updated scroll animation for dots inside container-1
+  // --- Dot Opacity Animation for .container-1 ---
   const containers = document.querySelectorAll(".container-1");
-
   containers.forEach((container) => {
     const dots = container.querySelectorAll(".dot");
     const textDots = container.querySelectorAll(".text .dot");
     const triggerPoint = window.innerHeight / 2;
 
-    // Function to toggle dot opacity based on scroll position
     function toggleDotOpacity() {
       dots.forEach((dot) => {
         const dotTop = dot.getBoundingClientRect().top + window.scrollY;
-        if (window.scrollY > dotTop - triggerPoint) {
-          dot.style.opacity = 1;
-        } else {
-          dot.style.opacity = 0;
-        }
+        dot.style.opacity = window.scrollY > dotTop - triggerPoint ? 1 : 0;
       });
-
       textDots.forEach((textDot) => {
         const textDotTop = textDot.getBoundingClientRect().top + window.scrollY;
-        if (window.scrollY > textDotTop - triggerPoint) {
-          textDot.style.opacity = 1;
-        } else {
-          textDot.style.opacity = 0;
-        }
+        textDot.style.opacity =
+          window.scrollY > textDotTop - triggerPoint ? 1 : 0;
       });
     }
-
-    // Listen for scroll events
-    document.addEventListener("scroll", toggleDotOpacity);
-
-    // Initial check on page load
+    window.addEventListener("scroll", toggleDotOpacity);
     toggleDotOpacity();
   });
 
+  // --- Typing Effect ---
   let text1 = "print";
   let text2 = "(";
   let text3 = "'hello world'";
   let text4 = ")";
   let index = 0;
   const textElement = document.getElementById("title-text");
-  let typingInterval; // Variable to hold the typing interval
-
   function type() {
     if (index < text1.length) {
       textElement.innerHTML += `<span style="color: moccasin">${text1.charAt(
         index
       )}</span>`;
       index++;
-      typingInterval = setTimeout(type, 100); // Speed for text1
+      setTimeout(type, 100);
     } else if (index - text1.length < text2.length) {
       textElement.innerHTML += `<span style="color: yellow">${text2.charAt(
         index - text1.length
       )}</span>`;
       index++;
-      typingInterval = setTimeout(type, 400); // Speed for text2
+      setTimeout(type, 400);
     } else if (index - (text1.length + text2.length) < text3.length) {
       textElement.innerHTML += `<span style="color: orange">${text3.charAt(
         index - (text1.length + text2.length)
       )}</span>`;
       index++;
-      typingInterval = setTimeout(type, 200); // Speed for text3
+      setTimeout(type, 200);
     } else if (
       index - (text1.length + text2.length + text3.length) <
       text4.length
@@ -228,10 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
         index - (text1.length + text2.length + text3.length)
       )}</span>`;
       index++;
-      typingInterval = setTimeout(type, 300); // Speed for text4
+      setTimeout(type, 300);
     }
-
-    // Start blinking cursor after all text is typed
     if (index >= text1.length + text2.length + text3.length + text4.length) {
       setInterval(function () {
         if (textElement.innerHTML.endsWith("_")) {
@@ -239,17 +189,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           textElement.innerHTML += "_";
         }
-      }, 1000); // Adjust blinking speed as needed
+      }, 1000);
     }
   }
-
-  // Start typing effect initially
   type();
 
-  // Close navbar collapse on link click
+  // --- Close Navbar Collapse on Link Click ---
   const navLinks = document.querySelectorAll(".nav-link");
   const navbarCollapse = document.querySelector(".navbar-collapse");
-
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (navbarCollapse.classList.contains("show")) {
@@ -257,5 +204,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
 
+  // --- Intersection Observer for Project Elements (.p-el) ---
+  const projects = document.querySelectorAll(".p-el");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    },
+    { threshold: 0.5 }
+  ); 
+
+  projects.forEach((project) => {
+    observer.observe(project);
+  });
+});

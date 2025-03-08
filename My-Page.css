@@ -132,6 +132,7 @@ Header and Vision
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
     text-align: justify;
+    word-wrap:normal;
 }
 
 .title-text-2 {
@@ -174,6 +175,9 @@ TYPING EFFECT
     border-right: 0.15em solid rgb(230, 223, 223);
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
+.typing-container{
+    width: fit-content;
+}
 
 @keyframes typing {
     from { width: 0; }
@@ -186,7 +190,7 @@ TYPING EFFECT
 }
 
 .moving-arrow i {
-    font-size: 2rem; /* Adjust size as needed */
+    font-size: 2rem;
     animation: bounce 2s infinite;
   }
   
@@ -268,9 +272,10 @@ Carousel
     animation-iteration-count: infinite;
     animation-name: scrollLeft;
     left: max(calc(200px * 9), 100%);
-    background-color: rgb(255, 255, 255); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    margin: 20px; /* Space between circles */
+    background-color:transparent; 
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2); 
+    margin: 20px;
+    border: transparent 10px solid ;
   }
   
   
@@ -286,11 +291,12 @@ Carousel
     animation-timing-function: linear;
     animation-duration: 30s;
     animation-iteration-count: infinite;
-    animation-name: scrollRight; /* Rightward scrolling animation */
+    animation-name: scrollRight;
     right: max(calc(200px * 12), 100%);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    margin: 20px; /* Space between circles */
+    background-color: transparent;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2); 
+    margin: 20px;
+    border: transparent 10px solid ;
   }
   
   @keyframes scrollRight {
@@ -300,15 +306,15 @@ Carousel
   }
   
   .itemRight img {
-    width: 70%; /* Fit the image within the container */
-    height: 70%; /* Maintain a square aspect ratio */
-    object-fit:contain; /* Prevent distortion of the image */
+    width: 70%; 
+    height: 70%; 
+    object-fit:contain; 
     background-color: transparent;
   }
   .itemLeft img {
-    width: 70%; /* Fit the image within the container */
-    height: 70%; /* Maintain a square aspect ratio */
-    object-fit:contain; /* Prevent distortion of the image */
+    width: 70%; 
+    height: 70%; 
+    object-fit:contain; 
     background-color: transparent;
   }
   
@@ -509,7 +515,6 @@ Projects
     margin-top:  100px ;
 }
 .p-cont{
-    
     margin-bottom: 100px;
     display: flex;
     flex-direction: row;
@@ -518,22 +523,33 @@ Projects
     justify-content: space-around;
 }
 .p-mid{
-    width: 80vw;
-    background-color: #292c2c;
+    /* width: 80vw; */
+    /* background-color: #292c2c; */
     opacity: 0.9;
     border-radius: 50px;
     padding: 5rem;
 }
 
-.p-el{
-    background-color:#212529;
+.p-el {
+    background-color: #212529;
     border-radius: 50px;
     padding: 4rem;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin:50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    opacity: 0;
+    transform: translateX(-100px); 
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 }
+
+.p-el.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 .p-el a:hover{
     color: #000000;
     background-color:antiquewhite;
@@ -545,7 +561,10 @@ Projects
     object-fit:contain;
 }
 .p-el a {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 2rem;
     margin: 3rem;
     border-radius: 50px;
@@ -555,6 +574,12 @@ Projects
     width: 25vw;
     height: fit-content;
 }
+.p-el .hide{
+    display: none;
+}
+.p-el a:hover .hide {
+    display: block; 
+}
 .p-el h2{
     font-size: 2.2rem;
     font-weight: bold;
@@ -562,6 +587,9 @@ Projects
 .p-el p{
     font-size: 2rem;
 }
+.p-text h2 {
+    text-align: center;
+  }
 
 .git a{
     width: fit-content;
@@ -733,13 +761,13 @@ Get to Know Me Links
 }
 
 #icon1 {
-    transition-delay: 2s;
+    transition-delay: 1s;
 }
 #icon2 {
-    transition-delay: 3s;
+    transition-delay: 2s;
 }
 #icon3 {
-    transition-delay: 4s;
+    transition-delay: 3s;
 }
 
 /*
@@ -920,6 +948,14 @@ SMALLER SCREENS
         justify-content: center;
         align-items: center;
     }
+    .p-el a{
+        margin: 15px 25px;
+        padding: 15px 25px !important;
+        width:70%;
+    }
+    .p-img{
+        padding:5px 20px;
+    }
 
 }
 @media (max-width:600px) {
@@ -949,6 +985,14 @@ SMALLER SCREENS
         color: #fff;
         background-image: linear-gradient(to right, #343a40, #212529);
         } */
+    .p-el a{
+        margin: 15px 25px;
+        padding: 15px 25px !important;
+        width:80%;
+    }
+    .p-img{
+        padding:5px 20px;
+    }
 
     
 
@@ -1008,7 +1052,15 @@ SMALLER SCREENS
     .p-el p{
         font-size: 1.2rem !important;
     }
-    
-    
-
+    .p-el a{
+        margin: 10px 25px;
+        padding: 15px !important;
+        width:80%;
+    }
+    .p-el .p-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
