@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let text4 = ")";
   let index = 0;
   const textElement = document.getElementById("title-text");
+
   function type() {
     if (index < text1.length) {
       textElement.innerHTML += `<span style="color: moccasin">${text1.charAt(
@@ -165,13 +166,13 @@ document.addEventListener("DOMContentLoaded", function () {
         index - text1.length
       )}</span>`;
       index++;
-      setTimeout(type, 400);
+      setTimeout(type, 100);
     } else if (index - (text1.length + text2.length) < text3.length) {
       textElement.innerHTML += `<span style="color: orange">${text3.charAt(
         index - (text1.length + text2.length)
       )}</span>`;
       index++;
-      setTimeout(type, 200);
+      setTimeout(type, 100);
     } else if (
       index - (text1.length + text2.length + text3.length) <
       text4.length
@@ -180,19 +181,26 @@ document.addEventListener("DOMContentLoaded", function () {
         index - (text1.length + text2.length + text3.length)
       )}</span>`;
       index++;
-      setTimeout(type, 300);
-    }
-    if (index >= text1.length + text2.length + text3.length + text4.length) {
-      setInterval(function () {
-        if (textElement.innerHTML.endsWith("_")) {
-          textElement.innerHTML = textElement.innerHTML.slice(0, -1);
-        } else {
-          textElement.innerHTML += "_";
-        }
-      }, 1000);
+      setTimeout(type, 100);
+    } else {
+      setTimeout(deleteText, 2000);
     }
   }
+
+  function deleteText() {
+    // Remove one character (span) at a time
+    if (textElement.childNodes.length > 0) {
+      textElement.removeChild(textElement.lastChild);
+      setTimeout(deleteText, 50);
+    } else {
+      index = 0;
+      setTimeout(type, 500);
+    }
+  }
+
+  // Start the typewriter effect
   type();
+
 
   // --- Close Navbar Collapse on Link Click ---
   const navLinks = document.querySelectorAll(".nav-link");

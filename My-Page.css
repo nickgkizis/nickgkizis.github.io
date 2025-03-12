@@ -120,11 +120,13 @@ Header and Vision
 .h-box{
     background-color: #292c2c;
     opacity: 0.9;
-    width:fit-content;
+    width:35%;
+    min-height: 250px;
+    height: fit-content;
     border-radius: 50px;
     margin-left: auto;
     margin-right: auto;
-    padding: 50px;
+    padding: 30px 30px;
 }
 
 .title-text {
@@ -139,7 +141,7 @@ Header and Vision
     width: 100%;
     font-size: 2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: justify;
+    text-align: center;
 }
 
 .hr1 {
@@ -148,6 +150,7 @@ Header and Vision
 
 .hr2 {
     font-size: 3rem;
+    text-align: center;
 }
 
 .hr3 {
@@ -166,7 +169,8 @@ TYPING EFFECT
     color:moccasin;
     width:fit-content;
     padding: 5px;
-    opacity: 70%;
+    opacity: 60%;
+    border-radius: 5px;
 }
 .typing-effect {
     font-family: 'Courier New', Courier, monospace;
@@ -918,6 +922,10 @@ SMALLER SCREENS
         padding:15px 0;
         width: 100%;
     }
+    .h-box{
+        width:60%;
+        min-height: 200px;
+    }
     
     
 }
@@ -956,6 +964,10 @@ SMALLER SCREENS
     .p-img{
         padding:5px 20px;
     }
+    .h-box{
+        width:90%;
+        min-height: 200px;
+    }
 
 }
 @media (max-width:600px) {
@@ -972,13 +984,19 @@ SMALLER SCREENS
     }
     .out-box .hr1{
         font-size: 1.7rem;
-
     }
     .out-box .hr2{
-        font-size: 1.1rem;
+        font-size:2rem;
     }
     .out-box .title-text-2{
         font-size: 0rem;
+    }
+    .typing-text{
+        font-size: 0.5rem;
+    }
+    .h-box{
+        width:90%;
+        min-height: 180px;
     }
     /* .new-bg{
         background-color: #343a40;
@@ -993,13 +1011,11 @@ SMALLER SCREENS
     .p-img{
         padding:5px 20px;
     }
-
-    
-
 }
-@media (max-width:400px) {
+@media (max-width:407px) {
     .h-box{
-        width: 90vw;
+        width:90%;
+        min-height: 250px;
     }
     .s-mid h1{
         font-size: 3rem;
