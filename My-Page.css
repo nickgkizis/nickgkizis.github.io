@@ -58,11 +58,11 @@ Navbar
 .main-logo{
     width: 270px;
     display: flex;
-    justify-content: center;
+    justify-content:center;
 }
 .logo-img img{
-    width: 140px;
-    height: 130px;
+    width: 400px;
+    height: 180px;
     background-size:cover;
     padding: 5px;
     /* margin-right: 140px; */
@@ -869,9 +869,9 @@ footer a:hover {
 SMALLER SCREENS
 */
 @media (max-width: 1250px){
-    .main-logo{
+    /* .main-logo{
         width: auto;
-    }
+    } */
     .title-text{
         width: 100%;
         justify-content:center;
@@ -939,12 +939,11 @@ SMALLER SCREENS
     .navbar-brand {
         font-size: 1.3rem;
     }
-    .logo-img img{
-        width: 120px;
+    /* .logo-img img{
+        width: 200px;
         height: 110px;
         background-size:cover;
-        padding: 5px;
-    }
+    } */
     .dropdown-item{
         margin-left: auto;
         margin-right: auto;
@@ -971,6 +970,19 @@ SMALLER SCREENS
 
 }
 @media (max-width:600px) {
+    .main-logo{
+        display: flex;
+        flex-direction:column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo-img img{
+        width: 320px;
+        height: 180px;
+        background-size: cover;
+        margin:0;
+        padding: 0;
+    }
     .s-mid {
         width: 100%;
         display: flex;
@@ -1008,11 +1020,30 @@ SMALLER SCREENS
         padding: 15px 25px !important;
         width:80%;
     }
-    .p-img{
+    /* .p-img{
         padding:5px 20px;
-    }
+    } */
 }
 @media (max-width:407px) {
+    /* .container-fluid{
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+    } */
+    .main-logo{
+        display: flex;
+        flex-direction:column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo-img img{
+        width: 320px;
+        height: 180px;
+        background-size: cover;
+        margin:0;
+        padding: 0;
+    }
     .h-box{
         width:90%;
         min-height: 250px;
@@ -1078,5 +1109,26 @@ SMALLER SCREENS
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+}
+@media (max-width:330px) {
+    /* .container-fluid{
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+    } */
+    .main-logo{
+        display: flex;
+        flex-direction:row;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo-img img{
+        width: 320px;
+        height: 180px;
+        background-size: cover;
+        margin:0;
+        padding: 0;
     }
 }
